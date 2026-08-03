@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --shell-x: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-white font-sans text-slate-dark antialiased;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-navy-900;
+    text-wrap: balance;
+    line-height: 1.15;
+  }
+
+  h1 {
+    @apply text-3xl font-bold sm:text-4xl lg:text-5xl;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    @apply text-2xl font-bold sm:text-3xl lg:text-[2.1rem];
+    letter-spacing: -0.015em;
+  }
+  h3 {
+    @apply text-lg font-semibold sm:text-xl;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* WCAG AA: a visible, high-contrast focus ring on every interactive element. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid #d3a24e;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-content;
+    padding-inline: var(--shell-x);
+  }
+
+  /* Vertical rhythm for major page bands. */
+  .band {
+    @apply py-14 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-gold-dark;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold
+           transition-all duration-200 focus-visible:outline-none;
+    min-height: 48px; /* comfortable mobile tap target */
+  }
+
+  .btn-gold {
+    @apply btn bg-gold-sheen text-navy-950 shadow-gold hover:brightness-105 hover:shadow-lift active:translate-y-px;
+  }
+
+  .btn-navy {
+    @apply btn bg-navy text-white hover:bg-navy-700 active:translate-y-px;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-white/45 bg-white/5 text-white backdrop-blur-sm hover:border-white hover:bg-white/15;
+  }
+
+  .btn-ghost {
+    @apply btn border-2 border-navy/20 bg-white text-navy hover:border-navy/50 hover:bg-navy/5;
+  }
+
+  .card {
+    @apply rounded-2xl border border-navy/10 bg-white shadow-card transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:-translate-y-1 hover:border-gold/45 hover:shadow-lift;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-navy/15 bg-white px-3.5 py-2.5 text-sm text-navy-950
+           placeholder:text-slate-mid;
+  }
+  .field:focus {
+    @apply border-gold outline-none;
+    box-shadow: 0 0 0 3px rgba(211, 162, 78, 0.18);
+  }
+
+  .prose-local {
+    @apply max-w-prose text-[1.0625rem] leading-[1.75] text-slate-dark;
+  }
+  .prose-local p + p {
+    @apply mt-4;
+  }
+
+  /* Readable, scannable data tables for the cost pages. */
+  .table-local {
+    @apply w-full border-collapse text-left text-sm;
+  }
+  .table-local th {
+    @apply border-b-2 border-navy/15 bg-navy-950/[0.03] px-4 py-3 font-display font-semibold text-navy-900;
+  }
+  .table-local td {
+    @apply border-b border-navy/10 px-4 py-3 align-top;
+  }
+  .table-local tbody tr:hover {
+    @apply bg-gold/[0.06];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Guarantees legible white type over a photographic hero. */
+  .text-shadow-hero {
+    text-shadow: 0 2px 18px rgba(8, 18, 32, 0.55);
+  }
+}
