@@ -51,7 +51,7 @@ export default function HomePage() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/82 to-navy-950/38"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-950/40"
         />
         <div className="shell py-16 sm:py-24 lg:py-28">
           <p className="eyebrow !text-gold-light">Hamilton, Ontario &amp; surrounding areas</p>

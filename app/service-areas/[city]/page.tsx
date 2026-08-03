@@ -101,7 +101,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
                 {city.neighbourhoods.map((n) => (
                   <span
                     key={n}
-                    className="rounded-lg border border-navy/12 bg-bone px-3 py-1.5 text-[0.82rem] text-slate-dark"
+                    className="rounded-lg border border-navy/10 bg-bone px-3 py-1.5 text-[0.82rem] text-slate-dark"
                   >
                     {n}
                   </span>

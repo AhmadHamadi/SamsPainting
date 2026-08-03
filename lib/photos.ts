@@ -104,6 +104,24 @@ export const photos = {
     width: 1600,
     height: 1067,
   },
+  brick: {
+    src: '/images/photos/brick.jpg',
+    alt: 'White-painted brick house exterior with dark shutters, the brick courses and mortar lines still reading clearly through the paint',
+    width: 1600,
+    height: 1050,
+  },
+  rust: {
+    src: '/images/photos/rust.jpg',
+    alt: 'Painted metal fence posts with orange rust bleeding through and the coating blistering away at the joints and bolt brackets',
+    width: 1600,
+    height: 1050,
+  },
+  caulk: {
+    src: '/images/photos/caulk.jpg',
+    alt: 'Gloved hand running a bead of sealant along the joint between a window frame and the surrounding framing',
+    width: 1600,
+    height: 1050,
+  },
   prep: {
     src: '/images/photos/prep.jpg',
     alt: 'Hand holding a compound-covered scraper flat against a wall, preparing the surface before painting',
