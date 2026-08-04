@@ -86,6 +86,8 @@ export default function ServicePage({ params }: { params: { slug: string[] } }) 
         intro={service.excerpt}
         photo={service.photo}
         priority
+        withForm
+        defaultService={service.name}
       />
 
       <section className="band">

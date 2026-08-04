@@ -64,6 +64,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
         intro={city.angle}
         photo="hero"
         priority
+        withForm
+        defaultCity={city.name}
       />
 
       <section className="band">

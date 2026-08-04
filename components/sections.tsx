@@ -3,6 +3,8 @@ import Icon, { type IconName } from './Icon';
 import Img from './Img';
 import FAQAccordion from './FAQAccordion';
 import QuoteForm from './QuoteForm';
+// QuoteForm is a client component; rendering it from these server components
+// is fine and keeps the form interactive without making the page client-side.
 import { site } from '@/lib/site';
 import type { FaqItem, Crumb } from '@/lib/types';
 import type { PhotoKey } from '@/lib/photos';
@@ -39,12 +41,19 @@ export function PageHero({
   intro,
   photo,
   priority = false,
+  withForm = false,
+  defaultService,
+  defaultCity,
 }: {
   eyebrow: string;
   h1: string;
   intro: string;
   photo: PhotoKey;
   priority?: boolean;
+  /** Renders the quote form alongside the copy — used on commercial-intent pages. */
+  withForm?: boolean;
+  defaultService?: string;
+  defaultCity?: string;
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-navy-950">
@@ -61,19 +70,43 @@ export function PageHero({
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950/85 via-navy-950/45 to-navy-950/10"
       />
-      <div className="shell py-14 sm:py-20">
-        <p className="eyebrow !text-gold-light">{eyebrow}</p>
-        <h1 className="mt-3 max-w-3xl !text-white text-shadow-hero">{h1}</h1>
-        <p className="mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-slate-light/90">{intro}</p>
-        <div className="mt-7 flex flex-wrap gap-3" data-boilerplate="1">
-          <Link href="/contact/" className="btn-gold">
-            Get a Free Quote <Icon name="arrow" size={18} />
-          </Link>
-          <a href={site.phoneHref} className="btn-outline">
-            <Icon name="phone" size={17} /> {site.phoneDisplay}
-          </a>
+
+      {withForm ? (
+        <div className="shell grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1.15fr_400px] lg:gap-12">
+          <div>
+            <p className="eyebrow !text-gold-light">{eyebrow}</p>
+            <h1 className="mt-3 !text-white text-shadow-hero">{h1}</h1>
+            <p className="mt-4 max-w-xl text-[1.05rem] leading-relaxed text-slate-light/95 text-shadow-hero">
+              {intro}
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3" data-boilerplate="1">
+              <a href={site.phoneHref} className="btn-gold">
+                <Icon name="phone" size={17} /> Call {site.phoneDisplay}
+              </a>
+              <Link href="/services/" className="btn-outline">
+                All services <Icon name="arrow" size={17} />
+              </Link>
+            </div>
+          </div>
+          <div className="w-full lg:justify-self-end">
+            <QuoteForm compact defaultService={defaultService} defaultCity={defaultCity} />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="shell py-14 sm:py-20">
+          <p className="eyebrow !text-gold-light">{eyebrow}</p>
+          <h1 className="mt-3 max-w-3xl !text-white text-shadow-hero">{h1}</h1>
+          <p className="mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-slate-light/90">{intro}</p>
+          <div className="mt-7 flex flex-wrap gap-3" data-boilerplate="1">
+            <Link href="/contact/" className="btn-gold">
+              Get a Free Quote <Icon name="arrow" size={18} />
+            </Link>
+            <a href={site.phoneHref} className="btn-outline">
+              <Icon name="phone" size={17} /> {site.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

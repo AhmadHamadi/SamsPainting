@@ -79,6 +79,9 @@ export default function CityServicePage({
         intro={service.excerpt}
         photo={service.photo}
         priority
+        withForm
+        defaultService={service.name}
+        defaultCity={city.name}
       />
 
       <section className="band">
