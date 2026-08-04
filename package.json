@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "test:spam": "node --experimental-strip-types --test scripts/solicitation.test.mjs",
-    "audit:seo": "node scripts/audit-seo.mjs"
+    "audit:seo": "node scripts/audit-seo.mjs",
+    "audit:keywords": "node scripts/audit-cannibalization.mjs",
+    "verify:deploy": "node scripts/verify-deploy.mjs"
   },
   "dependencies": {
     "next": "^14.2.35",

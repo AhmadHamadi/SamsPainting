@@ -58,6 +58,25 @@ const HARD_SIGNALS: { re: RegExp; label: string }[] = [
   { re: /\bwhite[\s-]?label\b/i, label: 'white-label' },
   { re: /\boutsourc(e|ing)\b/i, label: 'outsourcing' },
   { re: /\bcrypto|bitcoin|forex\b/i, label: 'crypto' },
+  // ── Additional patterns seen in real contractor inboxes ──
+  { re: /\bsearch\s+engine\s+optimi[sz]ation\b/i, label: 'seo-longform' },
+  { re: /\bgoogle\s+(ranking|rankings|position)\b/i, label: 'google-ranking' },
+  { re: /\b(increase|improve|boost)\s+(your\s+)?(website\s+)?traffic\b/i, label: 'boost-traffic' },
+  { re: /\byour\s+(website|site)\s+is\s+not\s+(mobile[\s-]?friendly|ranking|optimi[sz]ed|secure)\b/i, label: 'site-not-x' },
+  { re: /\bmobile[\s-]?friendly\s+(website|design)\b/i, label: 'mobile-friendly-pitch' },
+  { re: /\b(logo|banner|flyer|brochure)\s+design(ing)?\s+(service|company)\b/i, label: 'design-service' },
+  { re: /\bapp\s+develop(ment|er)\b/i, label: 'app-dev' },
+  { re: /\b(hire|dedicated)\s+(a\s+)?(developer|designer|virtual\s+assistant)\b/i, label: 'hire-dev' },
+  { re: /\bbulk\s+(email|sms|whatsapp)\b/i, label: 'bulk-messaging' },
+  { re: /\bemail\s+(marketing|list|database)\s+(service|package|for\s+sale)\b/i, label: 'email-marketing' },
+  { re: /\bb2b\s+(leads?|database|list)\b/i, label: 'b2b-list' },
+  { re: /\byour\s+domain\s+(is\s+)?(expiring|about\s+to\s+expire)\b/i, label: 'domain-scam' },
+  { re: /\bbusiness\s+(loan|funding|capital)\b/i, label: 'loan-offer' },
+  { re: /\bmerchant\s+(cash\s+advance|services)\b/i, label: 'merchant-services' },
+  { re: /\b(google|facebook)\s+ads?\s+(management|campaign|expert|specialist)\b/i, label: 'ppc-pitch' },
+  { re: /\bai\s+(chatbot|automation|agent)\s+(for\s+your\s+business|solution)\b/i, label: 'ai-pitch' },
+  { re: /\bunsubscribe\b/i, label: 'unsubscribe' },
+  { re: /\bnot\s+interested\?\s*(reply|click)/i, label: 'optout-footer' },
 ];
 
 /**
@@ -78,6 +97,12 @@ const SOFT_SIGNALS: { re: RegExp; label: string }[] = [
   { re: /\breply\s+(back\s+)?(with\s+)?["']?(yes|interested)["']?\b/i, label: 'reply-yes' },
   { re: /\bif\s+you('re|\s+are)\s+interested,?\s+(let\s+me\s+know|reply)\b/i, label: 'if-interested' },
   { re: /\bcase\s+stud(y|ies)\b/i, label: 'case-study' },
+  // These three read as agency boilerplate but a real customer can produce
+  // them — a formal older client opening with "Dear Sir/Madam", or someone
+  // offering a WhatsApp number. Soft, so genuine painting language rescues.
+  { re: /\bdear\s+(sir|madam|sir\/madam|business\s+owner|website\s+owner)\b/i, label: 'dear-sir' },
+  { re: /\bto\s+whom\s+it\s+may\s+concern\b/i, label: 'to-whom' },
+  { re: /\b(telegram|whats?app|skype)\s*(id\b|:|@)/i, label: 'im-handle' },
 ];
 
 /** A URL anywhere in the message. Homeowners rarely paste links; agencies do. */

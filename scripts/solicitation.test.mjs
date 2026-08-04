@@ -73,6 +73,66 @@ const SOLICITATIONS = [
       message: 'Please check the attached proposal for your business.',
     },
   },
+  {
+    label: 'search engine optimisation spelled out',
+    sub: {
+      name: 'Vikram',
+      email: 'v@agency.in',
+      message:
+        'Dear Sir/Madam, we provide search engine optimisation and can improve your Google ranking within 3 months.',
+    },
+  },
+  {
+    label: 'site-is-not-mobile-friendly pitch',
+    sub: {
+      name: 'Kevin',
+      email: 'kevin@devshop.co',
+      message:
+        'Hi, I noticed your website is not mobile friendly. We build mobile friendly websites at affordable prices. Shall I send a proposal?',
+    },
+  },
+  {
+    label: 'domain expiry scam',
+    sub: {
+      name: 'Domain Services',
+      email: 'billing@domain-renewals.net',
+      message: 'Your domain is expiring in 48 hours. Click here to renew immediately.',
+    },
+  },
+  {
+    label: 'business loan / merchant cash advance',
+    sub: {
+      name: 'Funding Team',
+      email: 'offers@capitalfast.co',
+      message: 'You are pre-approved for a business loan of up to $250,000. No obligation to accept.',
+    },
+  },
+  {
+    label: 'Google Ads management pitch',
+    sub: {
+      name: 'Sofia',
+      email: 'sofia@ppcpros.io',
+      message:
+        'We are a Google Ads management specialist agency. Our team can cut your cost per lead. Free audit available.',
+    },
+  },
+  {
+    label: 'AI chatbot pitch with WhatsApp handle',
+    sub: {
+      name: 'Ravi',
+      email: 'ravi@aisolutions.biz',
+      message:
+        'We offer an AI chatbot for your business to capture leads 24/7. WhatsApp: +91 98765 43210',
+    },
+  },
+  {
+    label: 'B2B lead list vendor',
+    sub: {
+      name: 'Data Team',
+      email: 'sales@leadlists.co',
+      message: 'We sell verified B2B leads and email database for contractors in Canada. Unsubscribe here.',
+    },
+  },
 ];
 
 // ── Must PASS: genuine homeowner enquiries ─────────────────────────────────
@@ -153,6 +213,33 @@ const CUSTOMERS = [
   {
     label: 'terse enquiry',
     sub: { name: 'J. Peters', email: 'jp@gmail.com', message: 'Deck staining quote? Grimsby.' },
+  },
+  {
+    label: 'formal customer opening with Dear Sir/Madam',
+    sub: {
+      name: 'Harold Wentworth',
+      email: 'h.wentworth@bell.net',
+      message:
+        'Dear Sir/Madam, I would be grateful for an estimate to repaint the interior of my bungalow in Ancaster. Three bedrooms and a hallway. Yours faithfully, Harold.',
+    },
+  },
+  {
+    label: 'customer offering a WhatsApp number',
+    sub: {
+      name: 'Fatima Ahmed',
+      email: 'fatima.a@gmail.com',
+      message:
+        'Easiest to reach me on WhatsApp: 289-555-0142. I need my kitchen cabinets painted and some drywall cracks filled in Stoney Creek.',
+    },
+  },
+  {
+    label: 'customer mentions their own website',
+    sub: {
+      name: 'Greg Lam',
+      email: 'greg@lamdental.ca',
+      message:
+        'I run a small clinic and need the waiting room repainted. Our website is lamdental.ca if you want to see the space. Burlington.',
+    },
   },
   {
     label: 'seasonal word containing "seo"-like substrings',
