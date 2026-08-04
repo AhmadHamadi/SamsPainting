@@ -117,6 +117,36 @@ export const solutions: Solution[] = [
     related: ['surface-preparation', 'sanding', 'exterior-painting'],
   },
   {
+    slug: 'popcorn-ceiling-asbestos',
+    title: 'Popcorn Ceilings and Asbestos: Test Before You Scrape',
+    keyword: 'popcorn ceiling asbestos',
+    problem: 'A textured ceiling you want gone, in a house old enough that nobody knows what is in it.',
+    icon: 'ceiling',
+    answer:
+      'Textured ceilings installed before about 1990 may contain asbestos, and scraping one without testing releases fibres through the whole house. A lab test on a small sample costs roughly $400 to $800 and settles it in days. Intact texture is not the hazard — disturbing it is.',
+    causes: [
+      { name: 'Asbestos was used in ceiling texture for decades', text: 'It was valued for fire resistance and easy application, and it stayed in use in Canadian textured ceiling products well after it had been dropped elsewhere.' },
+      { name: 'Age is the only reliable indicator', text: 'You cannot tell by looking. Two ceilings that appear identical can differ entirely, which is why the build date decides whether a sample goes to a lab.' },
+      { name: 'Dry scraping is what makes it dangerous', text: 'Fibres only become a risk once they are airborne. A dry-scraped ceiling puts them through the whole house and into carpets and furnishings.' },
+      { name: 'Painted-over texture behaves differently', text: 'Texture that has already been painted resists wetting, so it tends to get attacked more aggressively — exactly the wrong approach if asbestos is present.' },
+    ],
+    steps: [
+      { name: 'Establish the build date', text: 'Anything from before roughly 1990 is treated as suspect until a test says otherwise. Newer than that and you can usually proceed straight to removal.' },
+      { name: 'Send a sample to a lab', text: 'A small sample is taken carefully and sent for analysis. Published costs run about $400 to $800, and it is the only thing that gives a definitive answer.' },
+      { name: 'If it tests positive, stop', text: 'Asbestos abatement is licensed specialist work, not painting work. We will tell you plainly and point you to an abatement contractor rather than attempt it.' },
+      { name: 'If it tests clear, seal the room and work wet', text: 'Poly sheeting on the walls and floor, the texture wetted right through with a sprayer, then scraped rather than dry-sanded so the dust stays down.' },
+      { name: 'Skim, sand and finish', text: 'The scraped ceiling is skim-coated with setting-type compound, sanded flat, primed, and finished in two coats of flat ceiling white.' },
+    ],
+    faqs: [
+      { q: 'How do I know if my popcorn ceiling has asbestos?', a: 'Build date is the only useful indicator without testing — ceilings installed before roughly 1990 are treated as suspect. Appearance tells you nothing. A lab test on a small sample, published at around $400 to $800, is the only definitive answer.' },
+      { q: 'Is it safe to live with a popcorn ceiling that contains asbestos?', a: 'Generally yes, provided it is intact and undisturbed. Asbestos in a sound ceiling is not releasing fibres. The risk arrives when it is damaged, water-stained and crumbling, or being scraped, drilled or sanded.' },
+      { q: 'Can you just paint over a popcorn ceiling instead of removing it?', a: 'Often yes, and where asbestos is present it is usually the safer choice because it disturbs nothing. The catch is that painting textured ceilings adds weight and moisture, so it needs spraying rather than heavy rolling.' },
+      { q: 'Does Sam’s Painting remove asbestos ceilings?', a: 'No, and we would be wary of any painter who said they did. Asbestos abatement is licensed specialist work. We test first, and if it comes back positive we tell you straight and refer you on rather than take the job.' },
+      { q: 'How much does asbestos testing add to a ceiling job?', a: 'Published figures put lab testing at roughly $400 to $800 for a pre-1990 ceiling. Set against the cost of contaminating a house and then having it professionally cleaned, it is the cheapest part of the whole project and the one step we will not skip.' },
+    ],
+    related: ['popcorn-ceiling-removal', 'ceiling-painting', 'drywall-repair'],
+  },
+  {
     slug: 'paint-bubbling-and-blistering',
     title: 'Paint Bubbling or Blistering: What Causes It and How to Stop It',
     keyword: 'paint bubbling blistering',

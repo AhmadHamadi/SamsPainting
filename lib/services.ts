@@ -99,6 +99,63 @@ export const services: Service[] = [
       'Ceilings show every flaw because light rakes across them, so they are rolled in one continuous wet edge rather than in sections.',
   },
   {
+    // Added on the strength of Canadian autocomplete volunteering
+    // "popcorn ceiling removal hamilton" and "...burlington" unprompted off
+    // the bare national stem — a genuine local demand signal.
+    slug: 'popcorn-ceiling-removal',
+    name: 'Popcorn Ceiling Removal',
+    navName: 'Popcorn Ceilings',
+    keyword: 'popcorn ceiling removal',
+    excerpt: 'Textured ceilings taken back to flat, with pre-1990 ceilings tested before anyone scrapes.',
+    icon: 'ceiling',
+    photo: 'ceiling',
+    category: 'interior',
+    matrix: true,
+    timeline: '2–4 days per floor, plus lab turnaround if testing is needed first',
+    includes: [
+      'A sample sent for asbestos testing before any scraping on pre-1990 ceilings',
+      'Room sealed off with poly sheeting and the floor fully protected',
+      'Texture wetted down and scraped rather than dry-scraped, which keeps dust out of the air',
+      'Ceiling skim-coated, sanded flat and primed ready for a finish coat',
+      'Two coats of flat ceiling white to finish',
+    ],
+    prep: [
+      'Establish the age of the ceiling first — anything pre-1990 gets tested, not assumed',
+      'Check for water staining, because a stained ceiling needs sealing before it is recoated',
+      'Confirm the texture is not already painted over, which makes it far harder to wet and remove',
+    ],
+    materials:
+      'A garden sprayer to wet the texture through before scraping, then setting-type compound for the skim coat because it shrinks far less than lightweight mud.',
+    detail:
+      'Textured ceilings installed before about 1990 may contain asbestos, so the sample goes to a lab before anyone touches it — published testing costs run roughly $400 to $800 and it is not a step worth skipping.',
+  },
+  {
+    slug: 'basement-painting',
+    name: 'Basement Painting',
+    navName: 'Basements',
+    keyword: 'basement painting',
+    excerpt: 'Below-grade walls and ceilings finished in coatings that tolerate the damp.',
+    icon: 'wall',
+    photo: 'empty-room',
+    category: 'interior',
+    matrix: true,
+    timeline: '3–6 days for a typical finished basement',
+    includes: [
+      'Moisture checked at the walls and floor before any coating is chosen',
+      'Efflorescence brushed off masonry and the surface neutralised, not painted over',
+      'Exposed joists and ductwork sprayed where you want that industrial look',
+      'A washable finish on the walls, since basements collect more scuffs than upstairs rooms',
+    ],
+    prep: [
+      'Find and deal with the water source first — a coating will not hold back an active leak',
+      'Let bare concrete and block dry fully, because trapped moisture blows coatings off masonry',
+    ],
+    materials:
+      'A breathable masonry coating on below-grade block so trapped vapour can escape, rather than a sealer that traps it behind the film.',
+    detail:
+      'Basements fail differently from the rest of a house: the problem is almost always moisture moving through the wall rather than the paint itself, which is why the damp gets diagnosed before a colour is chosen.',
+  },
+  {
     slug: 'accent-wall-painting',
     name: 'Accent Wall Painting',
     navName: 'Accent Walls',
