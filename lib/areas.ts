@@ -55,11 +55,24 @@ export const cities: City[] = [
     lng: -79.8711,
     population: '569,353',
     driveTime: 'our home base',
+    // Full published neighbourhood set, cross-checked against the City's
+    // planning units. Note the City spells it Stipeley, not "Stipley".
     neighbourhoods: [
-      'Westdale', 'Durand', 'Kirkendall', 'Strathcona', 'Corktown', 'Stinson',
-      'Ainslie Wood', 'Crown Point', 'Stipeley', 'Gibson', 'Landsdale', 'Rosedale',
-      'Riverdale', 'North End', 'Bruleville', 'Inch Park', 'Concession Street',
-      'Templemead', 'Hampton Heights', "Ryckman's Corners", 'Falkirk', 'Mohawk',
+      // Lower city, west
+      'Westdale', 'Ainslie Wood', 'Kirkendall', 'Durand', 'Strathcona', 'Corktown',
+      'Stinson', 'Beasley', 'Central', 'International Village', 'North End',
+      'Chedoke Park', 'Cootes Paradise',
+      // Lower city, east
+      'Crown Point', 'Stipeley', 'Gibson', 'Landsdale', 'Delta', 'St. Clair',
+      'Blakeley', 'Homeside', 'Bartonville', 'Rosedale', 'Riverdale', 'McQuesten',
+      'Normanhurst', 'Greenford', 'Glenview', 'Parkview', 'Red Hill', 'Hamilton Beach',
+      // Mountain
+      'Bruleville', 'Inch Park', 'Centremount', 'Eastmount', 'Rolston', 'Gourley',
+      'Gilkson', 'Buchanan', 'Hill Park', 'Huntington', 'Macassa', 'Berrisfield',
+      'Sherwood', 'Templemead', 'Lawfield', 'Quinndale', "Ryckman's Corners",
+      'Falkirk', 'Broughton', 'Crerar', 'Mohawk', 'Greeningdon', 'Hampton Heights',
+      'Randall', 'Rushdale', 'Thorner', 'Trenholme', 'Mountview', 'Westcliffe',
+      'Concession Street', 'Heritage Green',
     ],
     angle:
       'The Escarpment splits Hamilton into two entirely different painting markets, and a crew that only knows one of them will get the other wrong.',
@@ -162,7 +175,9 @@ export const cities: City[] = [
     neighbourhoods: [
       'the Mill Street village core', 'Waterdown South', 'Waterdown North',
       'Smokey Hollow', 'Clappison’s Corners', 'the Grindstone Creek valley',
-      'Parkside Drive', 'Mountain Brow Road',
+      'Parkside Drive', 'Mountain Brow Road', 'Hidden Valley', 'Dundas Street East',
+      'Main Street North', 'Kerns Road', 'Braeheid', 'Sunny Meadow',
+      'Greensville', 'Millgrove', 'Carlisle', 'Freelton',
     ],
     angle:
       'Waterdown sits on top of the Escarpment, which sounds like a detail until you realise it shortens the exterior painting season at both ends.',
@@ -210,10 +225,16 @@ export const cities: City[] = [
     lng: -79.81417,
     population: '186,948',
     driveTime: 'about 15–20 minutes from Hamilton',
+    // Includes the historic village names — Wellington Square, Port Nelson and
+    // Port Flamborough — which locals still use. "Village Square" is a retail
+    // courtyard on Brant Street, not a neighbourhood, so it is deliberately absent.
     neighbourhoods: [
       'Aldershot', 'Roseland', 'Tyandaga', 'Millcroft', 'Headon Forest', 'The Orchard',
       'Alton Village', 'Brant Hills', 'Shoreacres', 'Mountainside', 'Dynes',
-      'downtown Burlington', 'Wellington Square', 'Port Nelson',
+      'downtown Burlington', 'Wellington Square', 'Port Nelson', 'Port Flamborough',
+      'Elizabeth Gardens', 'Pinedale', 'Longmoor', 'Palmer', 'Maple', 'Tansley',
+      'Corporate District', 'Freeman', 'Kilbride', 'Mount Nemo', 'Lowville',
+      'Bayview', 'LaSalle', 'Plains Road West',
     ],
     angle:
       'Burlington is the largest single market outside Hamilton we serve, and it spans everything from 1950s Roseland bungalows to houses finished last year.',
@@ -240,6 +261,9 @@ export const cities: City[] = [
       'Old Oakville', 'Kerr Village', 'Bronte', 'Eastlake', 'Clearview', 'College Park',
       'Iroquois Ridge North', 'Iroquois Ridge South', 'Glen Abbey', 'Palermo',
       'River Oaks', 'Uptown Core', 'West Oak Trails', 'Joshua Creek', 'Westmount',
+      'Wedgewood Creek', 'Bronte Creek', 'Falgarwood', 'Morrison', 'Southeast Oakville',
+      'Old Abbey Lane', 'Glenorchy', 'Preserve', 'Rural Oakville', 'Trafalgar',
+      'Winston Park', 'Queen Elizabeth Park', 'Brantwood',
     ],
     angle:
       'Few places hold finish work to a higher standard than Oakville, and with four heritage districts the town keeps everyone honest about it.',
@@ -262,10 +286,15 @@ export const cities: City[] = [
     lng: -79.88333,
     population: '132,979',
     driveTime: 'about 30–35 minutes from Hamilton',
+    // Milton calls its subdivisions "Surveys" locally — Bristol, Boyne and
+    // Sherwood are the current ones. "Brookville" could not be verified and is
+    // deliberately omitted.
     neighbourhoods: [
       'Old Milton', 'Hawthorne Village', 'Beaty', 'Clarke', 'Coates', 'Dempsey',
       'Ford', 'Harrison', 'Scott', 'Timberlea', 'Willmott', 'Bronte Meadows',
-      'Milton Heights', 'Campbellville',
+      'Milton Heights', 'Campbellville', 'Bowes', 'Cobden', 'Dorset Park',
+      'Fallingbrook', 'Forrest Grove', 'Mountain View', 'Valleyview', 'Walker',
+      'the Bristol Survey', 'the Boyne Survey', 'the Sherwood Survey', 'Nassagaweya',
     ],
     angle:
       'Milton was the fastest-growing municipality in Canada from 2001 to 2011, which means an enormous single cohort of houses all hitting their repaint window at once.',

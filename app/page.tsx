@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import Icon from '@/components/Icon';
 import Img from '@/components/Img';
 import JsonLd from '@/components/JsonLd';
-import { TrustBar, FaqSection, CTABand, QuoteBand, SectionHead, LinkCard } from '@/components/sections';
+import QuoteForm from '@/components/QuoteForm';
+import { TrustBar, FaqSection, CTABand, QuoteBand, SectionHead, LinkCard, PhotoGrid } from '@/components/sections';
 import { buildMetadata } from '@/lib/seo';
 import { site } from '@/lib/site';
 import { topServices, serviceHref } from '@/lib/services';
@@ -47,38 +48,51 @@ export default function HomePage() {
           name="hero"
           priority
           sizes="100vw"
-          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.55]"
+          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-90"
         />
+        {/* Scrim only where it is needed — heavy behind the copy column, almost
+            clear on the right so the photograph carries the banner. */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-950/40"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950/85 via-navy-950/45 to-navy-950/10"
         />
-        <div className="shell py-16 sm:py-24 lg:py-28">
-          <p className="eyebrow !text-gold-light">Hamilton, Ontario &amp; surrounding areas</p>
-          <h1 className="mt-3 max-w-3xl !text-white text-shadow-hero">
-            Painters in Hamilton who prepare properly and finish on time
-          </h1>
-          <p className="mt-5 max-w-2xl text-[1.08rem] leading-relaxed text-slate-light/90">
-            Interior and exterior painting, cabinet refinishing, drywall repair and deck staining
-            for homeowners across Hamilton and the Golden Horseshoe. Sam runs every job personally,
-            and every estimate is free and in writing.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact/" className="btn-gold">
-              Get a Free Quote <Icon name="arrow" size={18} />
-            </Link>
-            <a href={site.phoneHref} className="btn-outline">
-              <Icon name="phone" size={17} /> Call {site.phoneDisplay}
-            </a>
+        <div className="shell grid items-center gap-10 py-14 sm:py-18 lg:grid-cols-[1.15fr_400px] lg:gap-12 lg:py-20">
+          <div>
+            <p className="eyebrow !text-gold-light">Hamilton, Ontario &amp; surrounding areas</p>
+            <h1 className="mt-3 !text-white text-shadow-hero">
+              Painters in Hamilton who prepare properly and finish on time
+            </h1>
+            <p className="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-slate-light/95 text-shadow-hero">
+              Interior and exterior painting, cabinet refinishing, drywall repair and deck staining
+              for homeowners across Hamilton and the Golden Horseshoe. Sam runs every job
+              personally, and every estimate is free and in writing.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a href={site.phoneHref} className="btn-gold">
+                <Icon name="phone" size={17} /> Call {site.phoneDisplay}
+              </a>
+              <Link href="/services/" className="btn-outline">
+                See our services <Icon name="arrow" size={17} />
+              </Link>
+            </div>
+            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2.5">
+              {site.badges.map((b) => (
+                <li
+                  key={b}
+                  className="flex items-center gap-2 text-[0.82rem] font-semibold text-white/90"
+                >
+                  <Icon name="check" size={15} className="text-gold" strokeWidth={2.6} />
+                  {b}
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-2.5">
-            {site.badges.map((b) => (
-              <li key={b} className="flex items-center gap-2 text-[0.82rem] font-semibold text-slate-light/85">
-                <Icon name="check" size={15} className="text-gold" strokeWidth={2.6} />
-                {b}
-              </li>
-            ))}
-          </ul>
+
+          {/* Quote form in the hero — the single highest-impact conversion
+              placement on a local trade site. Stacks below the copy on mobile. */}
+          <div className="w-full lg:justify-self-end">
+            <QuoteForm compact title="Get Your Free Quote" />
+          </div>
         </div>
       </section>
 
@@ -109,6 +123,37 @@ export default function HomePage() {
               View all painting services <Icon name="arrow" size={17} />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── Photo grid ───────────────────────────────────────────── */}
+      <section className="band bg-bone">
+        <div className="shell">
+          <SectionHead
+            eyebrow="The work"
+            title="What a Sam’s Painting job looks like"
+            intro="Interiors, exteriors, cabinets and the preparation that makes them last. Pick a service to see how we approach it."
+            center
+          />
+          <div className="mt-10">
+            <PhotoGrid
+              items={[
+                { href: '/services/interior-painting/', photo: 'interior', title: 'Interior Painting', caption: 'Clean, straight-lined walls and ceilings' },
+                { href: '/services/cabinet-painting/', photo: 'cabinets', title: 'Cabinet Refinishing', caption: 'A factory-smooth kitchen without replacing the boxes' },
+                { href: '/services/exterior-painting/', photo: 'exterior', title: 'Exterior Painting', caption: 'Built to survive Ontario freeze-thaw' },
+                { href: '/services/deck-and-fence-staining/', photo: 'deck', title: 'Deck & Fence Staining', caption: 'Stain that soaks in rather than peeling off' },
+                { href: '/services/front-door-painting/', photo: 'front-door', title: 'Front Doors', caption: 'The cheapest visible upgrade your house has' },
+                { href: '/services/popcorn-ceiling-removal/', photo: 'ceiling', title: 'Popcorn Ceilings', caption: 'Textured ceilings taken back to flat' },
+                { href: '/services/drywall-repair/', photo: 'drywall', title: 'Drywall Repair', caption: 'Cracks and holes made invisible before painting' },
+                { href: '/services/wallpaper-removal/', photo: 'wallpaper', title: 'Wallpaper Removal', caption: 'Paper and glue off, back to a sound wall' },
+                { href: '/services/pressure-washing/', photo: 'pressure-wash', title: 'Pressure Washing', caption: 'Dirt, chalk and green growth off the house' },
+              ]}
+            />
+          </div>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-[0.78rem] text-slate">
+            Photographs above illustrate each service. Sam is building a gallery of completed local
+            projects — ask to see recent work in your area when we come out to quote.
+          </p>
         </div>
       </section>
 

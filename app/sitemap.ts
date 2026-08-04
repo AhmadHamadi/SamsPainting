@@ -5,6 +5,7 @@ import { cities } from '@/lib/areas';
 import { solutions } from '@/lib/solutions';
 import { costPages } from '@/lib/costs';
 import { posts } from '@/lib/blog';
+import { photos } from '@/lib/photos';
 
 // Single build date for lastmod. Deliberately a constant rather than new Date()
 // so a rebuild without content changes does not claim everything was updated.
@@ -35,6 +36,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/privacy/', 0.2, 'yearly'),
     entry('/terms-of-service/', 0.2, 'yearly'),
 
+    // Images are declared separately in app/image-sitemap.xml/route.ts —
+    // Next 14 ignores an `images` field here, so putting them in this file
+    // would be dead config that looks like it works.
     ...services.map((s) => entry(serviceHref(s), s.parent ? 0.7 : 0.85)),
     ...cities.map((c) => entry(`/service-areas/${c.slug}/`, 0.85)),
     ...cities.flatMap((c) =>

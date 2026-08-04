@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import JsonLd from '@/components/JsonLd';
 import Icon from '@/components/Icon';
 import Img from '@/components/Img';
+import CityMap from '@/components/CityMap';
 import {
   Breadcrumbs,
   PageHero,
@@ -124,6 +125,8 @@ export default function CityServicePage({
                 .
               </p>
             </div>
+
+            <CityMap city={city} />
 
             {/* Internal navigation, marked up as such. */}
             <nav aria-label={`Other services in ${city.name}`} className="mt-10">

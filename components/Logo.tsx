@@ -24,18 +24,18 @@ export default function Logo({
         alt={`${site.name} logo — a house outlined by a paintbrush stroke`}
         width={192}
         height={192}
-        className="h-11 w-11 shrink-0 object-contain sm:h-12 sm:w-12"
+        className="h-14 w-14 shrink-0 object-contain sm:h-16 sm:w-16"
       />
       <span className="flex flex-col leading-none">
         <span
-          className={`font-display text-[1.15rem] font-bold tracking-tight sm:text-[1.3rem] ${
+          className={`font-display text-[1.3rem] font-bold tracking-tight sm:text-[1.5rem] ${
             onDark ? 'text-white' : 'text-navy-900'
           }`}
         >
           Sam&rsquo;s Painting
         </span>
         <span
-          className={`mt-0.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] ${
+          className={`mt-1 text-[0.66rem] font-semibold uppercase tracking-[0.16em] ${
             onDark ? 'text-gold-light' : 'text-gold-dark'
           }`}
         >

@@ -52,13 +52,14 @@ export function PageHero({
         name={photo}
         priority={priority}
         sizes="100vw"
-        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.55]"
+        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-90"
       />
-      {/* Scrim is heaviest behind the text column and lifts toward the right,
-          so the photograph stays visible while keeping AA contrast on the H1. */}
+      {/* Scrim is heaviest behind the text column and lifts sharply toward the
+          right, so most of the photograph reads at full strength while the H1
+          still clears AA contrast. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-950/35"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950/85 via-navy-950/45 to-navy-950/10"
       />
       <div className="shell py-14 sm:py-20">
         <p className="eyebrow !text-gold-light">{eyebrow}</p>
@@ -252,6 +253,52 @@ export function LinkCard({
         Learn more <Icon name="arrow" size={14} />
       </span>
     </Link>
+  );
+}
+
+/**
+ * Photo-led service grid.
+ *
+ * Deliberately framed as "the work we do" rather than a portfolio: these are
+ * illustrative photographs of each service, not photographs of Sam's completed
+ * jobs. Presenting stock imagery as a project gallery would misrepresent the
+ * business's own work, so the heading and caption keep it honest. Swap in real
+ * job photos and this becomes a genuine gallery with no code changes.
+ */
+export function PhotoGrid({
+  items,
+}: {
+  items: { href: string; photo: PhotoKey; title: string; caption: string }[];
+}) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((it) => (
+        <Link
+          key={it.href}
+          href={it.href}
+          className="group relative isolate overflow-hidden rounded-2xl shadow-card"
+        >
+          <Img
+            name={it.photo}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+            className="h-60 w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+          />
+          <span
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/25 to-transparent"
+          />
+          <span className="absolute inset-x-0 bottom-0 p-5">
+            <span className="block font-display text-lg font-bold text-white">{it.title}</span>
+            <span className="mt-1 block text-[0.82rem] leading-snug text-slate-light/85">
+              {it.caption}
+            </span>
+            <span className="mt-2.5 inline-flex items-center gap-1.5 text-[0.78rem] font-bold text-gold-light">
+              View service <Icon name="arrow" size={14} />
+            </span>
+          </span>
+        </Link>
+      ))}
+    </div>
   );
 }
 

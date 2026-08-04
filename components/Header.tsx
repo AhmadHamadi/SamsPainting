@@ -52,7 +52,9 @@ export default function Header() {
       </div>
 
       <header className="sticky top-0 z-50 border-b border-navy/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
-        <div className="shell flex h-[4.25rem] items-center justify-between gap-4">
+        {/* Height is tied to the logo size in components/Logo.tsx. If the logo
+            changes, the drawer and mega-panel offsets below must follow. */}
+        <div className="shell flex h-20 items-center justify-between gap-4">
           <Logo />
 
           <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
@@ -148,7 +150,7 @@ export default function Header() {
 
       {/* Mobile drawer */}
       {open && (
-        <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-[6.5rem] z-40 overflow-y-auto bg-white lg:hidden">
+        <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-[7.25rem] z-40 overflow-y-auto bg-white lg:hidden">
           <nav aria-label="Mobile" className="shell space-y-6 py-6 pb-28">
             <Link href="/contact/" className="btn-gold w-full">
               Get My Free Quote
@@ -242,7 +244,7 @@ function DropdownButton({
 function MegaPanel({ children, onClose }: { children: React.ReactNode; onClose: () => void }) {
   return (
     <>
-      <div className="fixed inset-0 top-[6.5rem] z-30 hidden bg-navy-950/20 lg:block" onClick={onClose} aria-hidden="true" />
+      <div className="fixed inset-0 top-[7.25rem] z-30 hidden bg-navy-950/20 lg:block" onClick={onClose} aria-hidden="true" />
       <div className="absolute inset-x-0 top-full z-40 hidden border-b border-navy/10 bg-white shadow-lift lg:block">
         <div className="shell py-7">{children}</div>
       </div>

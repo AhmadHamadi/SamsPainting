@@ -27,10 +27,13 @@ export type Photo = {
 
 export const photos = {
   hero: {
+    // Chosen deliberately with no identifiable person in frame: a hero on a
+    // small owner-operated site reads as "this is the crew", so a stock face
+    // would imply someone who is not Sam.
     src: '/images/photos/hero.jpg',
-    alt: 'Two painters at work inside a home, one in an orange hard hat rolling fresh paint onto a hallway wall with the floors covered in protective paper',
-    width: 1600,
-    height: 1067,
+    alt: 'Paint roller on an extension pole laying a coat of soft blue paint over a white interior wall, leaving a crisp straight cut line',
+    width: 1800,
+    height: 1257,
   },
   interior: {
     src: '/images/photos/interior.jpg',
