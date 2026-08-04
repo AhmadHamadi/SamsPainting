@@ -139,8 +139,11 @@ export default function HomePage() {
             <PhotoGrid
               items={[
                 { href: '/services/interior-painting/', photo: 'interior', title: 'Interior Painting', caption: 'Clean, straight-lined walls and ceilings' },
-                { href: '/services/cabinet-painting/', photo: 'cabinets', title: 'Cabinet Refinishing', caption: 'A factory-smooth kitchen without replacing the boxes' },
-                { href: '/services/exterior-painting/', photo: 'exterior', title: 'Exterior Painting', caption: 'Built to survive Ontario freeze-thaw' },
+                { href: '/services/cabinet-painting/', photo: 'cabinets-navy', title: 'Cabinet Refinishing', caption: 'A factory-smooth kitchen without replacing the boxes' },
+                { href: '/services/exterior-painting/', photo: 'exterior-work', title: 'Exterior Painting', caption: 'Built to survive Ontario freeze-thaw' },
+                { href: '/services/brick-and-stucco-painting/', photo: 'brick', title: 'Brick & Stucco', caption: 'Masonry coated in a breathable finish' },
+                { href: '/services/accent-wall-painting/', photo: 'bedroom', title: 'Accent Walls', caption: 'One wall, one strong colour, a crisp edge' },
+                { href: '/services/stair-and-railing-painting/', photo: 'stairs', title: 'Stairs & Railings', caption: 'Spindles and handrails finished evenly' },
                 { href: '/services/deck-and-fence-staining/', photo: 'deck', title: 'Deck & Fence Staining', caption: 'Stain that soaks in rather than peeling off' },
                 { href: '/services/front-door-painting/', photo: 'front-door', title: 'Front Doors', caption: 'The cheapest visible upgrade your house has' },
                 { href: '/services/popcorn-ceiling-removal/', photo: 'ceiling', title: 'Popcorn Ceilings', caption: 'Textured ceilings taken back to flat' },
